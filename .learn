@@ -1,6 +1,10 @@
 tags:
-  - a tag
+  - error
+  - stack trace
+  - functions
+  - try...catch
+  - debugging
+  - readme
 languages:
-  - a language
-resources: 
-  - 0
+  - javascript
+resources: 6
