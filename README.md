@@ -4,7 +4,8 @@
 In this lesson, we'll introduce some of the common types of errors you'll encounter when writing JavaScript code.
 
 ## Objectives
-1.
+1. Recognize common JavaScript errors.
+2. Read a stack trace to discern where an error originated.
 
 ## Introduction
 No one writes perfect code the first time. Or the second time. Or the third time.
@@ -201,12 +202,12 @@ We mentioned earlier that an error thrown in an inner scope "propagates up the s
 
 The reason thrown errors propagate up the scope chain until they reach the outermost scope is that the JavaScript engine is looking for something to _catch_ the error. This is getting back to why all of the error messages we've seen so far are _uncaught_ errors.
 
-JavaScript provides a control flow structure called `try...catch` with which you can `try` to run some JavaScript statements and `catch` any errors thrown within the `try` block. We aren't going to go into any greater depth on the topic because it isn't worth getting sidetracked. If you **really** want to learn more about handling errors with a `try...catch` statement, check out the [MDN reference][try...catch]. You'll probably encounter `try...catch` in the wild, but it's often not the best tool for the job. By design, relying on your code throwing errors is a performance nightmare as a control flow pattern in an application.
+JavaScript provides a control flow structure called `try...catch` with which you can `try` to run some JavaScript statements and `catch` any errors thrown within the `try` block. We aren't going to go into any greater depth on the topic because it isn't worth getting sidetracked. If you **really** want to learn more about handling errors with a `try...catch` statement, check out the [MDN reference][try...catch]. You'll probably encounter `try...catch` in the wild, but it's often not the best tool for the job. By design, it's a performance nightmare to rely on your code throwing errors as a control flow pattern. It's much better to make your code flexible and properly handle things like bad user input **without** throwing errors. Errors should be reserved for when something goes seriously wrong.
 
 ## Conclusion
 Arguably the biggest difference between being a novice and an expert developer is how comfortable you feel with reading and debugging error messages. JavaScript — and, indeed, every programming language — is designed **by** programmers **for** programmers. The language doesn't intentionally make things more difficult for you. On the contrary, every time you write code that results in some sort of error, JavaScript goes out of its way to provide you with the information you need to find and fix the error. When you see one of those bright red error messages pop up, don't freak out! It's the JavaScript engine starting a friendly dialog with you: "Hey, I tried to do what you asked of me, but I ran into a problem. Here's where the problem occurred, and here's what happened."
 
-As you become more comfortable diagnosing and solving error messages, you'll become a faster, better programmer, and writing JavaScript code will become more and more enjoyable.
+As you become more comfortable diagnosing and solving error messages, you'll become a faster, better programmer, and writing JavaScript code will become more and more enjoyable!
 
 ## Resources
 - [MDN — Errors](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors)
