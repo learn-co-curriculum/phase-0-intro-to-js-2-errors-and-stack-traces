@@ -128,43 +128,43 @@ Save the `errors.js` file after you've made the fix, and refresh the browser win
 
 ![Assignment to constant variable](https://curriculum-content.s3.amazonaws.com/web-development/js/principles/errors-and-stack-traces-readme/third_is_not_defined.png)
 
-Let's see what's on lines `14`, `17`, and `20` in `errors.js`:
+Let's see what's on lines `17`, `13`, and `20` in `errors.js`:
 ```js
 function first () {
-  function second () {
-    third(); // Line 14
-  }
+  second(); // Line 13
+}
 
-  second(); // Line 17
+function second () {
+  third(); // Line 17
 }
 
 first(); // Line 20
 ```
 
-Now that we're dealing with nested function invocations, we can really see the power of the stack trace: it _traces_ the error up through the _stack_ of function calls that led to it. Let's read it backwards and reconstruct the events that led to the error:
-1. In the global scope: the JavaScript engine reaches line `20` and invokes `first()`, which is declared in the global scope.
-2. In the scope of `first()`: the engine reaches line `17` and invokes `second()`, which is declared inside `first()`.
-3. In the scope of `second()`: the engine reaches line `14` and sees the identifier `third`, but it can't find a declared variable or function with that name in the current scope, the outer scope (`first()`), or the outer scope's outer scope (the global scope).
-4. Because it can't find a matching declaration, the JavaScript engine throws an error inside `second()` that then propagates up the scope chain until it reaches the global scope.
+Now that we're dealing with a series of function invocations, we can really see the power of the stack trace: it _traces_ the error up through the _stack_ of function calls that led to it. Let's read it backwards and reconstruct the events that led to the error:
+1. In the global scope: the JavaScript engine reaches line `20` and invokes `first()`.
+2. Inside `first()`: the engine reaches line `13` and invokes `second()`.
+3. Inside `second()`: the engine reaches line `17` and sees the identifier `third`, but it can't find a declared variable or function with that name in the current scope (`second()`) or the outer scope (the global scope).
+4. Because it can't find a matching declaration, the JavaScript engine throws an error inside `second()` that then propagates up the call stack until it reaches the global execution context.
 
 To fix the `third is not defined` error, let's first try declaring `third` as the simplest thing we know, a variable:
 ```js
 function first () {
-  function second () {
-    const third = 'Declaring a new variable.';
-
-    third();
-  }
-
   second();
 }
+
+function second () {
+  third();
+}
+
+const third = 'Declaring a new variable.';
 
 first();
 ```
 
 Remember what we learned earlier in the section on common JavaScript errors. If our understanding is correct, this should fix the `third is not defined` error and, in its place, throw a new error. Can you guess what the new error will be?
 
-![`third is not a function`](https://curriculum-content.s3.amazonaws.com/web-development/js/principles/errors-and-stack-traces-readme/third_is_not_defined.png)
+![`third is not a function`](https://curriculum-content.s3.amazonaws.com/web-development/js/principles/errors-and-stack-traces-readme/third_is_not_a_function.png)
 
 Did you correctly deduce what the new error would be?
 
@@ -179,15 +179,15 @@ The new error is telling us that `third is not a function`. It may have been pre
 The fix, of course, is to declare `third()` as a function instead of a simple variable:
 ```js
 function first () {
-  function second () {
-    function third () {
-      console.log("Now I'm a function!");
-    }
-
-    third();
-  }
-
   second();
+}
+
+function second () {
+  third();
+}
+
+function third () {
+  console.log("Now I'm a function!");
 }
 
 first();
@@ -198,9 +198,9 @@ When we save the file and refresh the page again, all of the errors should be go
 ![No more errors](https://curriculum-content.s3.amazonaws.com/web-development/js/principles/errors-and-stack-traces-readme/no_more_errors.png)
 
 ## Playing `catch` with JavaScript errors
-We mentioned earlier that an error thrown in an inner scope "propagates up the scope chain until it reaches the global scope." But why?
+We mentioned earlier that an error thrown in a function "propagates up the call stack until it reaches the global execution context." But why?
 
-The reason thrown errors propagate up the scope chain until they reach the outermost scope is that the JavaScript engine is looking for something to _catch_ the error. This is getting back to why all of the error messages we've seen so far are _uncaught_ errors.
+The reason thrown errors propagate up the call stack is that the JavaScript engine is looking for something to _catch_ the error. This is getting back to why all of the error messages we've seen so far are _uncaught_ errors.
 
 JavaScript provides a control flow structure called `try...catch` with which you can `try` to run some JavaScript statements and `catch` any errors thrown within the `try` block. We aren't going to go into any greater depth on the topic because it isn't worth getting sidetracked. If you **really** want to learn more about handling errors with a `try...catch` statement, check out the [MDN reference][try...catch]. You'll probably encounter `try...catch` in the wild, but it's often not the best tool for the job. By design, it's a performance nightmare to rely on your code throwing errors as a control flow pattern. It's much better to make your code flexible and properly handle things like bad user input **without** throwing errors. Errors should be reserved for when something goes seriously wrong.
 
