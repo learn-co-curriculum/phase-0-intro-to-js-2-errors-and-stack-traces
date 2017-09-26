@@ -10,11 +10,11 @@ if (snackSelection = 'Pretzels') {
 // Fix the code above this line to see the error from this first() function in your browser's console
 
 function first () {
-  function second () {
-    third();
-  }
-
   second();
+}
+
+function second () {
+  third();
 }
 
 first();
