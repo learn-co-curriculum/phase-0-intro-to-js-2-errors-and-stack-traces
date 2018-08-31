@@ -106,9 +106,7 @@ The only new piece of information on the final line is `(anonymous)`, which is s
 To get a better sense of the various pieces of information provided in the error message, let's take a look at a couple errors in a JavaScript file. That way, we won't have (most of) this `<anonymous>` garbage to further confuse us.
 
 ### `index.html` and `errors.js`
-Open up `index.html` in your browser.
-
-***NOTE***: If you're in the IDE, follow [these steps](http://help.learn.co/the-learn-ide/common-ide-questions/viewing-html-pages-in-the-learn-ide). For local environments, there are a ton of different ways to do this. It will vary based on your operating system, but double clicking on the file in your file system should work on every OS. On macOS, you can type `open index.html` in the lesson's directory in your terminal. On Linux, the equivalent command is likely `xdg-open index.html`, and on Windows it should be `start index.html`.
+Clone this repo to your local machine, and open up `index.html` in your browser.
 
 When the file's open in your browser, open the JS console, and you should see something similar to the following error:
 
