@@ -344,4 +344,3 @@ and more enjoyable!
 [assignment to constant]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors/Invalid_const_assignment
 [try...catch]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch
 
-<p class='util--hide'>View <a href='https://learn.co/lessons/js-principles-errors-and-stack-traces-readme'>Errors and Stack Traces</a> on Learn.co and start learning to code for free.</p>
