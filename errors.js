@@ -1,4 +1,4 @@
-// Fix the error in the snackSelection code snippet to see the error from the function
+// Fix the error in the snackSelection code snippet first
 
 const snackSelection = 'Pretzels';
 
@@ -7,7 +7,7 @@ if (snackSelection = 'Pretzels') {
 }
 
 
-// Fix the code above this line to see the error from this first() function in your browser's console
+// Once the code above this line is fixed you'll be able to see the error from the code below
 
 function first () {
   second();
