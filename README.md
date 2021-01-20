@@ -66,10 +66,7 @@ telling us that we tried to invoke `undefined`, which is obviously not
 invocable. This happens when we've tried to store a function in a variable but
 the variable is undefined for some reason.
 
-**Aside:** Wait? We can store functions in variables? Yes we can! In JavaScript,
-functions are objects, which means we can do anything with them that we can do
-with any other object: assign it properties, store it in a variable, pass it as
-an argument, etc.
+> **Aside:** Wait? We can store functions in variables? Yes we can! In JavaScript, functions are objects, which means we can do anything with them that we can do with any other object: assign it properties, store it in a variable, pass it as an argument, etc.
 
 ## `Uncaught SyntaxError: missing ) after argument list`
 
