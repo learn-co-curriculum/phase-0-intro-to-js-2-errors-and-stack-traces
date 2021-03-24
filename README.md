@@ -116,7 +116,7 @@ One of the really neat pieces of information provided with the error messages is
 what's called a _stack trace_. Let's take a look at an example. Fork and clone
 this lesson into your local environment. Navigate into its directory in the
 terminal, then run `code .` to open the files in Visual Studio Code. Finally,
-execute the code in `error.js` by running `node error.js`. You should see
+execute the code in `errors.js` by running `node errors.js`. You should see
 something like this:
 
 ![assignment to constant variable](https://curriculum-content.s3.amazonaws.com/phase-0/errors-and-stack-traces/type-error.png)
