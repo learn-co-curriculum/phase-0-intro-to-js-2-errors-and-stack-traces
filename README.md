@@ -13,7 +13,7 @@ No one writes perfect code the first time. Or the second time. Or the third time
 
 We all make mistakes. One of the biggest advantages an experienced programmer
 has is knowing how to quickly troubleshoot and fix errors they encounter. You
-**will** reach this point &mdash; it's just a matter of practice. To get
+**will** reach this point — it's just a matter of practice. To get
 started, let's look at some of the common types of error messages you'll
 encounter when writing JavaScript code.
 
@@ -87,7 +87,7 @@ myAdder(10, 4;
 
 ## `Uncaught TypeError: Assignment to constant variable.`
 
-You're probably familiar with this one by now &mdash; it means we accidentally
+You're probably familiar with this one by now — it means we accidentally
 tried to assign a new value to a variable declared with the `const` keyword,
 which prevents reassignment. However, sometimes you rightfully feel that you
 didn't try to reassign anything, and it boils down to a small typo:
@@ -107,7 +107,7 @@ instead of a comparison operator, such as the _strict equality operator_
 
 This is just a selection of some of the many types of errors you might encounter
 while writing JavaScript code. The main point is to use the information you're
-given. The JavaScript engine isn't trying to trick you &mdash; on the contrary,
+given. The JavaScript engine isn't trying to trick you — on the contrary,
 it's trying to **help** you debug.
 
 ## Stack traces
@@ -121,7 +121,7 @@ something like this:
 
 ![assignment to constant variable](https://curriculum-content.s3.amazonaws.com/phase-0/errors-and-stack-traces/type-error.png)
 
-Whoa &mdash; there's a lot going on there! Let's break it down a bit.
+Whoa — there's a lot going on there! Let's break it down a bit.
 
 Near the top, you'll see JavaScript showing us the exact piece of code that's
 throwing the error. It's even pointing to the exact character it thinks is the
@@ -236,7 +236,7 @@ and we should see our two messages logged to the terminal.
 
 Arguably the biggest difference between being a novice and an expert developer
 is how comfortable you feel with reading and debugging error messages.
-JavaScript &mdash; and, indeed, every programming language &mdash; is designed
+JavaScript — and, indeed, every programming language — is designed
 **by** programmers **for** programmers. The language doesn't intentionally make
 things more difficult for you. On the contrary, every time you write code that
 results in some sort of error, JavaScript goes out of its way to provide you
