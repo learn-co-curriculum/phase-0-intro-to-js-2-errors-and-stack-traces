@@ -9,8 +9,6 @@
 
 No one writes perfect code the first time. Or the second time. Or the third time.
 
-![Forever stepping on rakes](https://curriculum-content.s3.amazonaws.com/web-development/js/principles/errors-and-stack-traces-readme/rakes.gif)
-
 We all make mistakes. One of the biggest advantages an experienced programmer
 has is knowing how to quickly troubleshoot and fix errors they encounter. You
 **will** reach this point — it's just a matter of practice. To get
@@ -66,7 +64,10 @@ telling us that we tried to invoke `undefined`, which is obviously not
 invocable. This happens when we've tried to store a function in a variable but
 the variable is undefined for some reason.
 
-> **Aside:** Wait? We can store functions in variables? Yes we can! In JavaScript, functions are objects, which means we can do anything with them that we can do with any other object: assign it properties, store it in a variable, pass it as an argument, etc.
+> **Aside:** Wait? We can store functions in variables? Yes we can! In
+> JavaScript, functions are objects, which means we can do anything with them
+> that we can do with any other object: assign it properties, store it in a
+> variable, pass it as an argument, etc.
 
 ## `Uncaught SyntaxError: missing ) after argument list`
 
