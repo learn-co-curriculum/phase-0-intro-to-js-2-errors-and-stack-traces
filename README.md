@@ -31,9 +31,6 @@ It can also arise if you forget to put quotation marks around a string:
 ```js
 Hello, world;
 // ERROR: Uncaught ReferenceError: Hello is not defined
-
-('Hello, world');
-// => "Hello, world"
 ```
 
 If you meant to declare the variable in the current scope and simply forgot,
@@ -96,7 +93,7 @@ didn't try to reassign anything, and it boils down to a small typo:
 ```js
 const snackSelection = 'Pretzels';
 
-if ((snackSelection = 'Pretzels')) {
+if (snackSelection = 'Pretzels') {
   console.log("That'll be $1, please!");
 }
 // ERROR: Uncaught TypeError: Assignment to constant variable.
